@@ -12,7 +12,7 @@ class AddProject extends Component {
       projectIdentifier: "",
       description: "",
       start_date: "",
-      end_date: "",
+      end_date: ""
     };
 
     this.onChange = this.onChange.bind(this);
@@ -47,7 +47,17 @@ class AddProject extends Component {
   render() {
     return (
       <div>
-        <div className="register">
+        {
+          //check name attribute input fields
+          //create constructor
+          //set state
+          //set value on input fields
+          //create onChange function
+          //set onChange on each input field
+          //bind on constructor
+          //check state change in the react extension
+        }
+        <div className="project">
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
@@ -83,7 +93,7 @@ class AddProject extends Component {
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
-                    ></textarea>
+                    />
                   </div>
 
                   <h6>Start Date</h6>
@@ -126,7 +136,7 @@ class AddProject extends Component {
 
 AddProject.propTypes = {
   createProject: PropTypes.func.isRequired
-}
+};
 
 export default connect(
   null,
