@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
-import {createProject} from "../../actions/projectActions"
+import { connect } from "react-redux";
+import { createProject } from "../../actions/projectActions";
 
 class AddProject extends Component {
   constructor() {
@@ -12,42 +12,44 @@ class AddProject extends Component {
       projectIdentifier: "",
       description: "",
       start_date: "",
-      end_date: "",
+      end_date: ""
     };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
- 
 
-  onChange(e){
-    this.setState({[e.target.name]:e.target.value});
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
-  onSubmit(e){
-
+  onSubmit(e) {
     e.preventDefault();
-
-
-    const newProject ={
+    const newProject = {
       projectName: this.state.projectName,
       projectIdentifier: this.state.projectIdentifier,
       description: this.state.description,
       start_date: this.state.start_date,
-      end_date: this.state.end_date,     
-
-    }
-    // console.log(newProject);
-
-    this.props.createProject(newProject, this.props.history)
-  };
-
-
+      end_date: this.state.end_date
+    };
+    this.props.createProject(newProject, this.props.history);
+  }
 
   render() {
     return (
       <div>
-        <div className="register">
+        {
+          //check name attribute input fields
+          //create constructor
+          //set state
+          //set value on input fields
+          //create onChange function
+          //set onChange on each input field
+          //bind on constructor
+          //check state change in the react extension
+        }
+
+        <div className="project">
           <div className="container">
             <div className="row">
               <div className="col-md-8 m-auto">
@@ -64,7 +66,6 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-
                   <div className="form-group">
                     <input
                       type="text"
@@ -75,7 +76,6 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-
                   <div className="form-group">
                     <textarea
                       className="form-control form-control-lg"
@@ -83,11 +83,9 @@ class AddProject extends Component {
                       name="description"
                       value={this.state.description}
                       onChange={this.onChange}
-                    ></textarea>
+                    />
                   </div>
-
                   <h6>Start Date</h6>
-
                   <div className="form-group">
                     <input
                       type="date"
@@ -97,9 +95,7 @@ class AddProject extends Component {
                       onChange={this.onChange}
                     />
                   </div>
-
                   <h6>Estimated End Date</h6>
-
                   <div className="form-group">
                     <input
                       type="date"
@@ -126,9 +122,9 @@ class AddProject extends Component {
 
 AddProject.propTypes = {
   createProject: PropTypes.func.isRequired
-}
+};
 
 export default connect(
   null,
-  {createProject}
+  { createProject }
 )(AddProject);

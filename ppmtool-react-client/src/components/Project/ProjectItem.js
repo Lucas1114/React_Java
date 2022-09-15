@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-export default class ProjectItem extends Component {
+class ProjectItem extends Component {
   render() {
     return (
       <div className="container">
@@ -35,6 +35,8 @@ export default class ProjectItem extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+export default ProjectItem;
